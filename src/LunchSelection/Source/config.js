@@ -1,8 +1,15 @@
 System.config({
   baseURL: "/",
   defaultJSExtensions: true,
-  transpiler: "traceur",
-  defaultJSExtensions: true,
+  transpiler: "babel",
+  babelOptions: {
+    "optional": [
+      "runtime",
+      "es7.decorators",
+      "optimisation.modules.system",
+      "es7.classProperties"
+    ]
+  },
   paths: {
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
@@ -12,7 +19,10 @@ System.config({
     "FortAwesome/Font-Awesome": "github:FortAwesome/Font-Awesome@4.5.0",
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0-beta.1.1.2",
     "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.1.3",
+    "babel": "npm:babel-core@5.8.35",
+    "babel-runtime": "npm:babel-runtime@5.8.35",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
+    "core-js": "npm:core-js@1.2.6",
     "jquery": "npm:jquery@2.2.0",
     "jquery/jquery-ui": "github:jquery/jquery-ui@1.11.4",
     "thomaspark/bootswatch": "github:thomaspark/bootswatch@3.3.6",
@@ -156,6 +166,15 @@ System.config({
       "aurelia-path": "npm:aurelia-path@1.0.0-beta.1.1.0",
       "aurelia-task-queue": "npm:aurelia-task-queue@1.0.0-beta.1.1.1",
       "core-js": "npm:core-js@2.1.0"
+    },
+    "npm:babel-runtime@5.8.35": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:core-js@1.2.6": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
     "npm:core-js@2.1.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
