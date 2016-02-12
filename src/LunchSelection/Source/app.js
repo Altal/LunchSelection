@@ -13,8 +13,4 @@ export class App{
         this.router = router;
 
     }
-
-    attached(){
-      // $(".smooth-appear").fadeIn(2000, ()=>{});
-    }
 }

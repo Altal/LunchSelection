@@ -2,6 +2,7 @@ System.config({
   baseURL: "/",
   defaultJSExtensions: true,
   transpiler: "traceur",
+  defaultJSExtensions: true,
   paths: {
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
