@@ -8,10 +8,12 @@ System.config({
   },
 
   map: {
+    "FortAwesome/Font-Awesome": "github:FortAwesome/Font-Awesome@4.5.0",
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0-beta.1.1.2",
     "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.1.3",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "jquery": "npm:jquery@2.2.0",
+    "thomaspark/bootswatch": "github:thomaspark/bootswatch@3.3.6",
     "traceur": "github:jmcriffey/bower-traceur@0.0.93",
     "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.93",
     "github:jspm/nodelibs-assert@0.1.0": {
