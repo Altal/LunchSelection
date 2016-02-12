@@ -1,8 +1,7 @@
 import {inject} from "aurelia-framework"
 import {EventAggregator} from "aurelia-event-aggregator"
 
-@inject(EventAggregator)
-@inject(Element)
+@inject(Element, EventAggregator)
 export class MapSection{
 
   constructor(Element, EventAggregator){
@@ -45,7 +44,7 @@ export class MapSection{
   }
 
   //on element attached to the screen
-  attached(){
+  bind(){
     this.initMap();
   }
 
