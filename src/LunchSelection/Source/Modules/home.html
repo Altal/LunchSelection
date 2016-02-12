@@ -2,6 +2,7 @@
   <require from="./sections/startSection"></require>
   <require from="./sections/loginSection"></require>
   <require from="./sections/mapSection"></require>
+  <require from="./sections/finishSection"></require>
 
   <div class="text-center">
 
@@ -19,6 +20,9 @@
         <map-section></map-section>
     </section>
 
+    <section if.bind="currentStep==3">
+        <finish-section></finish-section>
+    </section>
 
   </div>
 

@@ -14,7 +14,7 @@ export class Home{
   }
 
   onContinue(){
-    this.currentStep+=1;
+    this.currentStep = (++this.currentStep)%4;
     console.log(this.currentStep);
   }
 
