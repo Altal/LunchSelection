@@ -6,6 +6,14 @@
       <div id="map" class="map"></div>
     </div>
 
+    <!--places as a list-->
+    <div class="container">
+      <div repeat.for="p of places" class="place">
+        <div class="place-header">${p.place.name}</div>
+      </div>
+    </div>
+    <!--end of places as a list-->
+
     <button style="margin-top: 1em;" class="btn btn-primary btn-large" click.trigger="finish()">Finish</button>
   </div>
 </template>

@@ -6,7 +6,7 @@ import {inject} from "aurelia-framework"
 @inject(EventAggregator)
 export class Home{
   constructor(EventAggregator){
-    this.currentStep = 0;
+    this.currentStep = 2;
     EventAggregator.subscribe('on-continue', ()=>{
       this.onContinue();
     });

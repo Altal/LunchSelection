@@ -7,7 +7,7 @@ export class MapSection{
   constructor(Element, EventAggregator){
     this.element = Element;
     this.eventAggregator = EventAggregator;
-    this.markers = [];
+    this.places = [];
   }
 
   //initialize map
@@ -52,25 +52,31 @@ export class MapSection{
           console.log('search places');
           let request = {
                   bounds: this.map.getBounds(),
-                  types: ['restaurant']
+                  types: ['restaurant','food']
                 };
           let map = this.map;
           let service = new google.maps.places.PlacesService(map);
           let clearMarkers = this.clearMarkers;
-          let markers = this.markers;
-          console.log(markers);
+          let places = this.places;
+
+          console.log(places);
           service.nearbySearch(request, function(results, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
-                clearMarkers(markers);
+                clearMarkers(places);
                 for (var i = 0; i < results.length; i++) {
                   var place = results[i];
 
                   var marker = new google.maps.Marker({
                     map: map,
-                    icon: place.icon,
+                    icon: '../content/images/place.png',
+                    anchor: new google.maps.Point(16, 16),
+                    origin: new google.maps.Point(0, 0),
                     position: place.geometry.location
                   });
-                  markers.push(marker);
+                  places.push({
+                    marker: marker,
+                    place: place
+                  });
                 }
             }
             });
@@ -80,7 +86,7 @@ export class MapSection{
 
   clearMarkers(markers){
     for (var i = 0; i < markers.length; i++) {
-      markers[i].setMap(null);
+      markers[i].marker.setMap(null);
     }
     markers.splice(0, markers.length);
   }
