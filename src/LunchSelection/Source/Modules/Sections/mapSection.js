@@ -7,6 +7,7 @@ export class MapSection{
   constructor(Element, EventAggregator){
     this.element = Element;
     this.eventAggregator = EventAggregator;
+    this.markers = [];
   }
 
   //initialize map
@@ -45,7 +46,43 @@ export class MapSection{
                                   icon: icon
                                 });
         });
-      }
+
+        //start search for restaurants
+        this.map.addListener('idle', ()=>{
+          console.log('search places');
+          let request = {
+                  bounds: this.map.getBounds(),
+                  types: ['restaurant']
+                };
+          let map = this.map;
+          let service = new google.maps.places.PlacesService(map);
+          let clearMarkers = this.clearMarkers;
+          let markers = this.markers;
+          console.log(markers);
+          service.nearbySearch(request, function(results, status) {
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                clearMarkers(markers);
+                for (var i = 0; i < results.length; i++) {
+                  var place = results[i];
+
+                  var marker = new google.maps.Marker({
+                    map: map,
+                    icon: place.icon,
+                    position: place.geometry.location
+                  });
+                  markers.push(marker);
+                }
+            }
+            });
+        });
+        }
+  }
+
+  clearMarkers(markers){
+    for (var i = 0; i < markers.length; i++) {
+      markers[i].setMap(null);
+    }
+    markers.splice(0, markers.length);
   }
 
   //on element attached to the screen
