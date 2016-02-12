@@ -1,17 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,500italic,400italic);
 
 body{
-  background: #ECEFF1;
+  background: #f5f5f5;
   font-family: 'Roboto', sans-serif !important;
   font-size: 20px;
+  color: #555;
 }
 
 h3{
   color: #D84315
 }
+h1, h2{
+  color: #555;
+}
 
 header{
-  margin-bottom: 6em;
+  margin-bottom: 2em;
 }
 
 .btn-large{

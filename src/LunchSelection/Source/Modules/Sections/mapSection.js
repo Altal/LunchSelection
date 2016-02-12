@@ -11,8 +11,13 @@ export class MapSection{
 
   //initialize map
   initMap() {
+      if(this.map){
+        console.log('map is already initialized')
+        return;
+      }
+
       //generate map
-      let map = new google.maps.Map($(this.element).find('#map')[0],{
+      this.map = new google.maps.Map($(this.element).find('#map')[0],{
         center: {lat: 44.540, lng: -78.546},
         zoom: 16
       });
@@ -27,7 +32,7 @@ export class MapSection{
             };
 
             //set map center
-            map.setCenter(pos);
+            this.map.setCenter(pos);
             //set current location
             let icon = {
               url: '../content/images/me.png',
@@ -36,7 +41,7 @@ export class MapSection{
             };
             let meMarker = new google.maps.Marker({
                                   position: pos,
-                                  map: map,
+                                  map: this.map,
                                   icon: icon
                                 });
         });

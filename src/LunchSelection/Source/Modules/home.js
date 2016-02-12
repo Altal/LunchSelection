@@ -1,6 +1,5 @@
 import bootstrap from "bootstrap"
 import $ from "bootstrap"
-import _start from "./sections/start"
 import {EventAggregator} from "aurelia-event-aggregator"
 import {inject} from "aurelia-framework"
 
