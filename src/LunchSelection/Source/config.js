@@ -13,6 +13,7 @@ System.config({
     "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.1.3",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "jquery": "npm:jquery@2.2.0",
+    "jquery/jquery-ui": "github:jquery/jquery-ui@1.11.4",
     "thomaspark/bootswatch": "github:thomaspark/bootswatch@3.3.6",
     "traceur": "github:jmcriffey/bower-traceur@0.0.93",
     "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.93",

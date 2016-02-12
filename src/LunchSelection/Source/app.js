@@ -1,3 +1,6 @@
+import {inject} from "aurelia-framework"
+import $ from "bootstrap";
+
 export class App{
 
   configureRouter(config, router) {
@@ -8,6 +11,10 @@ export class App{
         ]);
 
         this.router = router;
+
     }
 
+    attached(){
+      $(".smooth-appear").fadeIn(2000, ()=>{});
+    }
 }

@@ -1,0 +1,28 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,500italic,400italic);
+
+body{
+  background: #efefef;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 20px;
+}
+
+header{
+  margin-bottom: 6em;
+}
+
+.btn-large{
+  width: 70%;
+  min-width: 150px;
+  font-size: 2em;
+}
+
+.form-small{
+  width: 70%;
+  min-width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-small > button.btn-large{
+  width: 100%;
+}
