@@ -5,17 +5,17 @@
 
   <div class="text-center">
 
-    <section>
+    <section if.bind="currentStep==0">
         <start-section></start-section>
     </section>
 
 
-    <section class="alternate">
+    <section if.bind="currentStep==1">
         <login-section></login-section>
     </section>
 
 
-    <section>
+    <section if.bind="currentStep==2">
         <map-section></map-section>
     </section>
 

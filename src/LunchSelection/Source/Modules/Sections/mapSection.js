@@ -1,10 +1,13 @@
 import {inject} from "aurelia-framework"
+import {EventAggregator} from "aurelia-event-aggregator"
 
+@inject(EventAggregator)
 @inject(Element)
 export class MapSection{
 
-  constructor(Element){
+  constructor(Element, EventAggregator){
     this.element = Element;
+    this.eventAggregator = EventAggregator;
   }
 
   //initialize map
@@ -46,4 +49,8 @@ export class MapSection{
     this.initMap();
   }
 
+  //on finish pressed
+  finish(){
+    this.eventAggregator.publish('on-continue');
+  }
 }
