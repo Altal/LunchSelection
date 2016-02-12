@@ -1,9 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,500italic,400italic);
 
 body{
-  background: #efefef;
+  background: #ECEFF1;
   font-family: 'Roboto', sans-serif !important;
   font-size: 20px;
+}
+
+h3{
+  color: #D84315
 }
 
 header{
@@ -24,5 +28,32 @@ header{
 }
 
 .form-small > button.btn-large{
+  width: 100%;
+}
+
+
+section{
+  animation-duration: 1s;
+  animation-name: appeartop;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+section.alternate{
+}
+
+@keyframes appeartop {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.map{
+  height: 600px;
   width: 100%;
 }

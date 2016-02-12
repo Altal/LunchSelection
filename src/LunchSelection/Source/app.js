@@ -15,6 +15,6 @@ export class App{
     }
 
     attached(){
-      $(".smooth-appear").fadeIn(2000, ()=>{});
+      // $(".smooth-appear").fadeIn(2000, ()=>{});
     }
 }
