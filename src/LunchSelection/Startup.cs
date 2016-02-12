@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
+using Microsoft.AspNet.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -38,6 +39,8 @@ namespace LunchSelection
 
             app.UseIISPlatformHandler();
 
+
+            app.UseDefaultFiles();
             app.UseStaticFiles();
 
             app.UseMvc();
