@@ -1,6 +1,15 @@
 import {inject} from "aurelia-framework"
 import {EventAggregator} from "aurelia-event-aggregator"
 
+//place class represents map marker, place and additional properties
+class Place{
+  constructor(marker, place){
+    this.isSelected = false;
+    this.marker = marker;
+    this.place = place;
+  }
+}
+
 @inject(Element, EventAggregator)
 export class MapSection{
 
@@ -73,10 +82,7 @@ export class MapSection{
                     origin: new google.maps.Point(0, 0),
                     position: place.geometry.location
                   });
-                  places.push({
-                    marker: marker,
-                    place: place
-                  });
+                  places.push(new Place(marker, place));
                 }
             }
             });
@@ -99,5 +105,27 @@ export class MapSection{
   //on finish pressed
   finish(){
     this.eventAggregator.publish('on-continue');
+  }
+
+  highlightPlace(place){
+    place.marker.setIcon('../content/images/place-selected.png');
+  }
+  releasePlace(place){
+    if(!place.isSelected)
+      place.marker.setIcon('../content/images/place.png');
+  }
+
+  selectPlace(place){
+    place.isSelected = !place.isSelected;
+    if(place.isSelected)
+      place.marker.setIcon('../content/images/place-selected.png');
+    else
+      place.marker.setIcon('../content/images/place.png');
+  }
+}
+
+export class IsSelectedToClassValueConverter{
+  toView(val){
+    return val ? 'selected' : null;
   }
 }

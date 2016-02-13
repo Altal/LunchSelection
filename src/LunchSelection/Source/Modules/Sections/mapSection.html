@@ -8,8 +8,10 @@
 
     <!--places as a list-->
     <div class="container">
-      <div repeat.for="p of places" class="place">
+      <div repeat.for="p of places" class="place ${p.isSelected | isSelectedToClass}" click.trigger="selectPlace(p)"
+            mouseEnter.trigger="highlightPlace(p)" mouseLeave.trigger="releasePlace(p)">
         <div class="place-header">${p.place.name}</div>
+        <div class="place-body"></div>
       </div>
     </div>
     <!--end of places as a list-->
