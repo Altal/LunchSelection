@@ -5,14 +5,14 @@
     <form class="form-small">
       <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-        <input type="text" class="form-control" placeholder="Email address">
+        <input value.bind="user.email" type="text" class="form-control" placeholder="Email address">
       </div>
       <div class="input-group" style="margin-top: 0.5em">
         <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-        <input type="text" class="form-control" placeholder="Name">
+        <input value.bind="user.name" type="text" class="form-control" placeholder="Name">
       </div>
 
-      <button style="margin-top: 1em;" class="btn btn-primary btn-large" click.trigger="continue()">Continue</button>
+      <button disabled.bind="!user.email || !user.name" style="margin-top: 1em;" class="btn btn-primary btn-large" click.trigger="continue()">Continue</button>
     </form>
   </div>
 </template>

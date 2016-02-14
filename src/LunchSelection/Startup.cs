@@ -43,7 +43,14 @@ namespace LunchSelection
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+            });
             app.UseMvc();
+            
         }
 
         // Entry point for the application.
